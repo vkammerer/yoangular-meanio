@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+dist
+.tmp
+.sass-cache
+app/bower_components
+
+
+mean/.DS_Store
+mean/.nodemonignore
+mean/.sass-cache/
+mean/node_modules/
+mean/public/lib
+mean/config/env/development.json
+mean/config/env/production.json
+mean/config/env/test.json
+mean/config/env/travis.json

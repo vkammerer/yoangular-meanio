@@ -1,0 +1,22 @@
+<navigation></navigation>
+<form>
+	<div class="form-group">
+		<label for="email">Email</label>
+		<div>
+			<input class="form-control" type="text" ng-model="signer.email" placeholder="Email"></div>
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<div>
+			<input class="form-control" type="password" ng-model="signer.password" placeholder="Password"></div>
+	</div>
+		<div>
+		<button class="form-control" type="submit" ng-click="signIn(signer)">Sign in</button>
+	</div><br />
+	Or sign in with:
+<ul class="list-group">
+		<li class="list-group-item"><a ng-href="{{appurl + '/auth/facebook'}}">Facebook</a></li>
+		<li class="list-group-item"><a ng-href="{{appurl + '/auth/twitter'}}">Twitter</a></li>
+		<li class="list-group-item"><a ng-href="{{appurl + '/auth/google'}}">Google</a></li>
+	</ul>
+</form>

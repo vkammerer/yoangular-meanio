@@ -1,0 +1,18 @@
+<navigation></navigation>
+<p>This is the article list view.</p>
+<ul class="list-group">
+	<li ng-repeat="article in articles" class="list-group-item">
+		<div ng-show="(user._id === article.user._id)">
+			<a ng-href="#/article/{{article._id}}/edit"><strong>{{article.title}}</strong></a>			
+			<a ng-click="deleteArticle(article)" style="color:red;float:right;font-weight:bold;border-radius:4px;border:2px solid red; display:inline-block;padding:1px 4px;line-height:100%;cursor:pointer">X</a>
+			<p>{{article.content}}</p>
+		</div>
+		<div ng-show="(user._id !== article.user._id)">
+			<strong>{{article.title}}</strong>
+			<p>{{article.content}}</p>
+		</div>
+		<div>
+			<span>créé par </span>{{article.user.name}} ({{article.user.provider}})
+		</div>
+	</li>
+</ul>

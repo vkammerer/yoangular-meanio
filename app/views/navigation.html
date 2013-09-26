@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-collapse navbar-ex1-collapse">
+	<ul class="nav navbar-nav">
+		<li><a href="#/">Home</a></li>
+		<li ng-show="user"><a href="#/articles">List articles</a></li>
+		<li ng-show="user"><a href="#/article/create">Create article</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li ng-show="!user"><a href="#/signin">Sign in</a></li>
+		<li ng-show="!user"><a href="#/signup">Sign up</a></li>
+		<li ng-show="user && !(user.facebook || user.twitter || user.google)">
+			<a>
+			{{user.name}}
+			<br />
+			<img ng-src="{{user.photo}}">
+			</a>
+			<a href="#/signout">Sign out</a>
+		</li>
+		<li ng-show="user.facebook">
+			<a>
+			{{user.name}}
+			<br />
+			<img ng-src="{{user.facebook.photo}}">
+			</a>
+			<a href="#/signout">Sign out</a>
+		</li>
+		<li ng-show="user.twitter">
+			<a>
+			{{user.name}}
+			<br />
+			<img ng-src="{{user.twitter.profile_image_url}}">
+			</a>
+			<a href="#/signout">Sign out</a>
+		</li>
+		<li ng-show="user.google">
+			<a>
+			{{user.name}}
+			<br />
+			<img ng-src="{{user.google.picture}}" style="max-width:60px">
+			</a>
+			<a href="#/signout">Sign out</a>
+		</li>
+	</ul>
+	</div>
+</nav>
